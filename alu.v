@@ -1,26 +1,3 @@
-/********************************************************************************************
-Copyright 2019 - Maven Silicon Softech Pvt Ltd. 
-
-All Rights Reserved.
-
-This source code is an unpublished work belongs to Maven Silicon Softech Pvt Ltd.
-
-It is not to be shared with or used by any third parties who have not enrolled for our paid training 
-
-courses or received any written authorization from Maven Silicon.
-
-
-Webpage     :      www.maven-silicon.com
-
-Filename    :	   alu.v   
-
-Description :      Arithmetic Logic Unit Design
-
-Author Name :      Susmita
-
-Version     :      1.0
-*********************************************************************************************/
-
 module alu(input [7:0]a,b,
            input [3:0]command_in,
 	   input oe,
@@ -47,12 +24,11 @@ module alu(input [7:0]a,b,
    reg  [15:0]out;
 
 
-   /*Step1 : Write down the functionality of ALU based on the commands given above.
-	        *Use arithmetic and logical operators* */
+  
    always@(command_in)
    begin
   case(command_in)
-            //--------- write the functionality here -------  
+              
  ADD:out=a+b;
  INC:out=a+1'b1;  
  SUB:out=a-b;  
@@ -72,7 +48,8 @@ module alu(input [7:0]a,b,
  endcase
  end  
 
-   //Understand the tri-state logic for actual output
+ 
    assign d_out = (oe) ? out : 16'hzzzz;
 		
 endmodule
+
